@@ -1,0 +1,493 @@
+/* =======================================================
+   GLOBAL STYLE - BERLAKU UNTUK SEMUA HALAMAN WEBSITE
+   reset dasar, background umum, navbar, container, footer
+======================================================= */
+
+/* RESET SEMUA ELEMEN + ANIMASI HALUS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+/* BACKGROUND DASAR WEBSITE */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* NAVBAR MENU ATAS */
+nav {
+    background-color: #333;
+    padding: 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+/* LINK MENU NAVBAR */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+/* SAAT CURSOR MENYENTUH MENU */
+nav a:hover {
+    background-color: orange;
+}
+
+/* SAAT MENU DIKLIK */
+nav a:active {
+    background-color: darkorange;
+}
+
+/* HALAMAN YANG SEDANG AKTIF */
+.active {
+    background-color: orange;
+    color: white;
+}
+
+/* KOTAK PUTIH PEMBUNGKUS ISI HALAMAN */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER PALING BAWAH */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
+
+
+/* =======================================================
+   OPENING SCREEN / ANIMASI LOADING SAAT HALAMAN DIBUKA
+======================================================= */
+
+.opening-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    animation: hideScreen 1s forwards;
+}
+
+.loading-box {
+    text-align: center;
+    color: white;
+}
+
+.loading-box h1 {
+    color: orange;
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+.loading-box p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* BULATAN SPINNER BERPUTAR */
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 6px solid #444;
+    border-top: 6px solid orange;
+    border-radius: 50%;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+/* ANIMASI PUTAR */
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ANIMASI HILANG SENDIRI */
+@keyframes hideScreen {
+    0% { opacity: 1; visibility: visible; }
+    80% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+
+/* =======================================================
+   INDEX / HOME PAGE
+   halaman utama sambutan website
+======================================================= */
+
+/* HERO SECTION = BAGIAN PALING ATAS HOME */
+.hero-section {
+    background: url('c.jfif') center/cover;
+    min-height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    padding: 40px;
+}
+
+/* TEKS BESAR WELCOME */
+.hero-text h2 {
+    color: orange;
+    font-size: 40px;
+}
+
+.hero-text h1 {
+    font-size: 55px;
+}
+
+.hero-text p {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.hero-text span {
+    color: orange;
+    font-weight: bold;
+}
+
+/* FOTO PROFIL BULAT */
+.hero-image img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 5px solid orange;
+}
+
+/* JUDUL SECTION */
+.section-title {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 32px;
+}
+
+/* 3 KOTAK NAVIGASI CEPAT */
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.quick-card {
+    background: white;
+    text-decoration: none;
+    color: black;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.quick-card:hover {
+    transform: translateY(-8px);
+}
+
+.quick-card h3 {
+    color: orange;
+    margin-bottom: 10px;
+}
+
+/* KOTAK STATISTIK WEBSITE */
+.stats-box {
+    background: #222;
+    color: white;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+}
+
+.stats-box h1 {
+    color: orange;
+}
+
+/* KATA-KATA QUOTE */
+.quote-box {
+    margin-top: 30px;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-left: 5px solid orange;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+
+/* =======================================================
+   ABOUT PAGE
+   halaman penjelasan diri
+======================================================= */
+
+.about-top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.about-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid orange;
+}
+
+.about-text h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* 3 KOLOM ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.about-card {
+    background: #fffaf5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.about-card h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* RANGE SKILL YANG BISA DIGESER */
+.skill-range {
+    width: 100%;
+    accent-color: orange;
+    margin-bottom: 15px;
+}
+
+.quote {
+    margin-top: 30px;
+    text-align: center;
+    font-style: italic;
+    font-size: 22px;
+    color: #444;
+}
+
+
+/* =======================================================
+   CONTACT PAGE
+   form kirim pesan
+======================================================= */
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: darkorange;
+}
+
+
+/* =======================================================
+   REFERENSI PAGE
+   halaman sumber video youtube
+======================================================= */
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.video-box {
+    background: white;
+    padding: 18px;
+    border-left: 5px solid orange;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.video-box:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.video-box img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+.video-box h3 {
+    margin-top: 12px;
+    font-size: 22px;
+}
+
+.video-box p {
+    margin: 8px 0 15px;
+    font-size: 16px;
+}
+
+/* TOMBOL MENUJU YOUTUBE */
+.watch-btn {
+    display: inline-block;
+    background: orange;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.watch-btn:hover {
+    background: darkorange;
+}
+
+
+/* =======================================================
+   NEWS PAGE
+   halaman berita teknologi dan market
+======================================================= */
+
+/* BACKGROUND KHUSUS HALAMAN NEWS */
+.news-body {
+    background: linear-gradient(to right, #111, #1f1f1f);
+}
+
+.news-container {
+    background: rgba(255,255,255,0.97);
+}
+
+/* RUNNING TEXT BERITA */
+.ticker {
+    margin-top: 20px;
+    background: #111;
+    color: orange;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid orange;
+}
+
+/* GRID BERITA */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.news-card {
+    background: #ffffff;
+    padding: 18px;
+    border-left: 5px solid orange;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.news-card h2 {
+    margin-top: 10px;
+    font-size: 21px;
+}
+
+.news-card small {
+    color: gray;
+}
+
+.news-card p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* TOMBOL LINK SUMBER BERITA */
+.source-btn {
+    display: inline-block;
+    background: orange;
+    color: white;
+    padding: 9px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.source-btn:hover {
+    background: darkorange;
+}
+
+/* MARKET BOX BAWAH */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.market-box {
+    background: #111;
+    color: orange;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid orange;
+}
+
+.market-box:hover {
+    transform: scale(1.05);
+}
